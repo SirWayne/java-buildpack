@@ -20,8 +20,8 @@ fi
 
     heapdumpfile=$PWD/oom_heapdump.hprof
     echo "Compressing files"
-    #gzip $heapdumpfile
+       gzip $heapdumpfile
      echo "Start Upload ${heapdumpfile}"
-     curl -X POST -H "Content-Type: multipart/form-data" -F "file=@${heapdumpfile}" ${endpoint} -k -u ${heapusername}:${heappassword}
+     curl -X POST -H "Content-Type: multipart/form-data" -F "file=@${heapdumpfile.gz}" ${endpoint} -k -u ${heapusername}:${heappassword}
 }
 
